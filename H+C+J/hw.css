@@ -1,12 +1,121 @@
-button{
-    margin:50px;
-    border-radius: 20px;
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(ellipse 40% 30% at 20% 20%, #FFD166cc 0%, transparent 100%),
+        radial-gradient(ellipse 45% 35% at 80% 30%, #073B4Ccc 0%, transparent 100%),
+        radial-gradient(ellipse 35% 30% at 30% 80%, #EF476Fcc 0%, transparent 100%),
+        radial-gradient(ellipse 30% 40% at 80% 80%, #118AB2cc 0%, transparent 100%),
+        #e2eafc;
+}
+
+.glass-container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 8px;
+}
+.display {
+    flex: 1;
+    height: 40px;
+    border-radius: 16px;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 2px 12px 0 rgba(174,238,255,0.18), 0 0 0 2px rgba(174,238,255,0.12) inset;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-size: 1.5rem;
+    color: #222;
+    text-align: right;
+    padding: 0 16px;
+    outline: none;
+    transition: box-shadow 0.2s, border 0.2s;
+}
+.display:focus {
+    box-shadow: 0 0 8px 2px #aeefff, 0 2px 12px 0 rgba(174,238,255,0.18);
+    border: 1.5px solid #aeefff;
+}
+
+h1 {
+    color: #222;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.5);
+    text-align: center;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+button {
+    margin: 10px;
+    border-radius: 30px;
     height: 60px;
     width: 60px;
     font-size: 40px;
-    background-color: gray;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.45) 60%, #bbb 85%, #222 100%);
+    border: none;
+    box-shadow: none;
+    color: #222;
+    transition: background 0.2s, color 0.2s;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    outline: none;
+}
+button:active, button:focus, button:visited {
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    outline: none;
+}
+@keyframes pop {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 12px 0 rgba(174,238,255,0.18);
+    }
+    50% {
+        transform: scale(1.28);
+        box-shadow: 0 6px 24px 0 rgba(174,238,255,0.28);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 12px 0 rgba(174,238,255,0.18);
+    }
+}
+button.pop {
+    animation: pop 0.32s cubic-bezier(.4,2,.6,1) both;
 }
 
-body{
-    background-color: white;
+.delete {
+    margin-bottom: 0;
+    width: 60px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    background: rgba(255,255,255,0.5);
+    border: none;
+    box-shadow: none;
+    color: #222;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.delete:active {
+    background: #bbb;
 }
