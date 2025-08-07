@@ -1,0 +1,19 @@
+{
+    "name": "telephone-ui",
+    "version": "1.0.0",
+    "description": "Glassmorphism Telephone UI with Node.js",
+    "main": "hcj.js",
+    "scripts": {
+      "start": "node hcj.js",
+      "dev": "nodemon hcj.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.7"
+    },
+    "engines": {
+      "node": ">=14.0.0"
+    }
+  }
